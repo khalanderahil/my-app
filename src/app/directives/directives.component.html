@@ -1,0 +1,52 @@
+<!-- <p>directives works!</p> -->
+<h1>{{today | date}}</h1>
+
+<h2>{{user | json}}</h2>
+
+<h1 *ngFor="let name of names">{{name}}</h1>
+<ol>
+    <li *ngFor="let name of names">{{name}} ></li>
+</ol>
+
+<select>
+    <option *ngFor="let state of states">{{state}}</option>
+</select>
+
+<h2 *ngFor="let user of users ">my name is {{user.name}} and my age is {{user.age}}</h2>
+
+<!-- array of object -->
+
+<table border="2">
+    <thead  >
+        <tr  >
+            <th>name</th>
+            <th>sub</th>
+            <th>marks</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let student of students">
+            <td>{{student.name}}</td>
+            <td>{{student.sub}}</td>
+            <td>{{student.marks}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- products -->
+<div class="product" *ngFor="let product of products">
+    <h3>product name: {{ product.name}} </h3>
+    <h3>product price: {{ product.price}} </h3>
+    <h3>product rating: {{ product.rating }} </h3>
+</div>
+<!-- time and date -->
+<br>
+<label>time</label>
+<input type="number" [(ngModel)]= "time">
+
+<h1 *ngIf="time>=0&&time<=12">good morning</h1>
+<h1 *ngIf="time>=13&&time<=17">good after noon</h1>
+<h1 *ngIf="time>=17&&time<=20">good evening</h1>
+<h1 *ngIf="time>=20&&time<=24">good night</h1>
+
+

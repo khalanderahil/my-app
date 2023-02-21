@@ -1,0 +1,32 @@
+<!-- <p>create-vehicle works!</p> -->
+<h2>{{isEdit?"Edit vehicle form":"Create vehicle form"}}</h2>
+
+<form [formGroup]="Vehicleform">
+
+<H1>Create vehicle form</H1>
+<label for="">vehicle</label>
+<input type="text" formControlName="Vehicle" >
+
+<br>
+<label for="">manufacture</label>
+<input type="text" formControlName="manufacturer">
+
+<br>
+<label for="">model</label>
+<input type="text" formControlName="model">
+<br>
+<label for="">type</label>
+<input type="text" formControlName="type">
+<br>
+<label for="">color</label>
+<input type="text" formControlName="color">
+<br>
+<label for="">image</label>
+<input type="text" formControlName="image">
+<br>
+<!-- <button class="btn btn-success" (click)="submit()">submit</button> -->
+<button class="btn btn-success" (click)="submit()">{{isEdit?"update":"Create"}}</button>
+
+</form>
+
+

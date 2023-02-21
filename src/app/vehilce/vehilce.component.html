@@ -1,0 +1,70 @@
+<select [(ngModel)]="column" >
+            <option>vehicle</option>
+            <option>manufacturer</option>
+            <option>model</option>
+            <option>type</option>
+            <option>color</option>
+            <option>image</option>
+            <option>id</option>
+</select>
+
+<label for="">order</label>
+<select [(ngModel)]="order">
+    <option >asc</option>
+    <option >desc</option>
+</select>
+<button (click)="sort()">sort</button>
+
+<input type="text" placeholder="search" [(ngModel)]="term"(keypress)="filter()">
+<br>
+
+<label>page</label>
+
+<select [(ngModel)]="page">
+    <option >1</option>
+    <option>2</option>
+    <option >3</option>
+    <option>4</option>
+</select>
+
+<label>limit</label>
+<select [(ngModel)]="limit">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+<button (click)="pagination()" class="btn-btn-success">pages</button>
+
+<!-- vehicles tables -->
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>vehicle</th>
+            <th>manufacturer</th>
+            <th>model</th>
+            <th>type</th>
+            <th>color</th>
+            <th>image</th>
+            <th>id</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let vehilce of vehilces">
+        <tr>
+            <td>{{vehilce.Vehicle}}</td>
+            <td>{{vehilce.manufacturer}}</td>
+            <td>{{vehilce.model}}</td>
+            <td>{{vehilce.type}}</td>
+            <td>{{vehilce.color}}</td>
+            <td><img src="{{vehilce.image}}" alt="error" width="100px" height="100px"></td>
+            <td>{{vehilce.id}}</td>
+            <td>
+                <button class="btn-btn-danger" (click)="delete(vehilce.id)">delete</button>
+                <button (click)="view(vehilce.id)">view</button>
+                <button (click)="edit(vehilce.id)">edit</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

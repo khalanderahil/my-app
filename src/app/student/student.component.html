@@ -1,0 +1,50 @@
+<!-- <p>student works!</p> -->
+<input type="text" placeholder="search"[(ngModel)]="term"(keypress)="filter()">
+
+
+
+<label>page</label>
+
+<select [(ngModel)]="page">
+    <option >1</option>
+    <option>2</option>
+    <option >3</option>
+    <option>4</option>
+</select>
+
+<label>limit</label>
+<select [(ngModel)]="limit">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+<!-- <button (click)="pages()" class="btn-btn-success">pages</button> -->
+
+<table class="table table-dark ">
+    <thead >
+        <tr >
+            <!-- <th>{{student}}</th> -->
+            <th>name</th>
+            <th>city</th>
+            <th>phone</th>
+            <th>address</th>
+            <th>image</th>
+            <th>placedIn</th>
+            <th>salary</th>
+        </tr>
+    </thead>
+    <tbody  *ngFor="let student of students">
+        <tr>
+          
+            <td>{{student.name}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.phone}}</td>
+            <td>{{student.address}}</td>
+            <td><img src="student.image" alt=""></td>
+            <td>{{student.placedIn}}</td>
+            <td>{{student.salary}}</td>
+            <td><button class="btn btn-danger">delete</button></td>
+        </tr>
+    </tbody>
+</table>

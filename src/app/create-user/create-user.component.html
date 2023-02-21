@@ -1,0 +1,110 @@
+<p>create-user works!</p>
+<!-- formGroup -->
+<form action="" [formGroup]="userForm" class="form"> 
+    <label for="">Name:</label>
+    <input type="text" formControlName="name">
+
+    <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid" >
+        <p *ngIf="userForm.get('name')?.errors?.['required']">name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlenth']">Name should be minimum 3 chars</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlenth']">name should be max 10 chars </p>
+    </div>
+    <br>
+    <label for="">Age:</label>
+    <input type="text" formControlName="age">
+
+    <div class="text-danger" *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid" >
+        <p *ngIf="userForm.get('age')?.errors?.['required']">age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">min 0 years</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']">max 100 years</p>
+    </div>
+    <br>
+    <label for="">Phone:</label>
+    <input type="text" formControlName="phone">
+    
+    <div class="text-danger" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid" >
+        <p *ngIf="userForm.get('phone')?.errors?.['required']">phone is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min']">min 1 numbers</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max']">max 10 numbers</p>
+    </div>
+    <br>
+    <label for="">Email:</label>
+    <input type="text" formControlName="email">
+
+    <div class="text-danger" *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid" >
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['min']">invalid email format</p>
+    </div>
+    <br>
+    <!-- nastedformgroupp for state and adress -->
+    <div formGroupName="adress">
+     <label for="">state</label>
+     <input type="text" formControlName="state">
+     <br>
+     <div *ngIf="userForm.get('adress')?.get('state')?.touched && userForm.get('adress')?.get('state')?.invalid">
+            <p *ngIf="userForm.get('adress')?.get('state')?.errors?.['required']"> state is required</p>
+     </div>
+     <label for="">pin</label>
+     <input type="number" formControlName="pin">
+     <br>
+    </div>
+    
+    <button (click)="add()">add cart</button>
+    <br>
+
+    <!-- nasted formGroup implemantion -->
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+
+                <label for="">number:</label>
+                <input type="number" formControlName="number">
+                <div class="text-danger"*ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">Card number is required</p>
+                </div>
+                <br>
+                <label for="">expiry:</label>
+                <input type="month" formControlName="expiry">
+                <br>
+                <label for="">cvv:</label>
+                <input type="number" formControlName="cvv">
+                <br>
+                <button class="btn btn-danger" (click)="delete(i)">delete</button>
+
+            </div>
+        </div>
+    </div>
+
+    <label for="">type:</label>
+
+    <input type="radio" name="type" formControlName="type" value="dayscholor">
+    <label for="">dayscholor</label>
+    
+    
+    <label for="">residential</label>
+    <input type="radio" name="type" formControlName="type" value="residential">
+    <br>
+    
+    <div *ngIf="userForm.get('type')?.value == 'dayscholor'">
+
+        <label for="">busfee</label>
+    <input type="number" formControlName="busfee">5
+
+    </div>
+    
+
+    <div *ngIf="userForm.get('type')?.value == 'residential'" >
+
+    <label for="">hostalfee</label>
+    <input type="number" formControlName="hostelfee">
+    <br>
+</div>
+    <button [disabled]="userForm.invalid" (click)="submit()">submit</button>
+
+
+
+
+
+
+</form>

@@ -1,0 +1,66 @@
+ <!-- <p>cart works!</p> -->
+ <label >name</label><br>
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <label >price</label >
+    <br>
+    <input type="text" [(ngModel)]="price">
+    <br>
+    <label >rating</label>
+    <br>
+    <input type="text"[(ngModel)]="rating">
+    <br>
+    <label >free Delivery</label>
+    <input type="radio" name="fd" value="true" [(ngModel)]="itsfreeDelivery">
+    <label for="">yes</label>
+    <input type="radio" name="fd" value="false" [(ngModel)]="itsfreeDelivery">
+    <label for="">no</label>
+    <br>
+    <button class="btn btn-success" (click)="add()">add to cart</button>
+    <br>
+    
+
+<input type="text" placeholder="search" [(ngModel)]="term" (keypress)="search()">
+<button class="btn-btn-primary" (click)="onlyfreedelivery()">only free delivery</button>
+<button (click)="price1h()">price low to high</button>
+
+<button (click)="priceh2()">price high to low</button>
+
+<button (click)="ratinghl()">rating high to low</button>
+
+<button (click)="rating1()">rating low to high</button>
+
+<button class="btn-btn-info"(click)="applyDiscount()"></button>
+<!-- <button (click)="applydelivergeychars">apply delivergey chars</button> -->
+<button class="btn-brn-secondry"(click)="total">total price</button>
+<button (click)="cartitems">total cart items</button>
+<table class="table table-brown">
+
+    
+
+    <thead>
+        <tr>
+            <th>s.no</th>
+            <th>Product name</th>
+            <th>price</th>
+            <th>rating</th>
+            <th>Free Delivery</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products;let i=index">
+            <td>{{i+1}}</td>
+     <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.rating }}</td>
+        <td>{{ product.isFreeDelivery}}</td>
+        <td>
+            <button  class="btn btn-danger"(click)="delete(i)">delete</button>
+
+        </td>
+        </tr>
+        
+        
+    </tbody>
+</table>

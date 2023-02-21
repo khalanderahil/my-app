@@ -1,0 +1,12 @@
+.product{
+    width: 200px;
+    height: 200px;
+    border: 2px soli red;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    background-color: aliceblue;
+    overflow: auto;
+    
+    
+}

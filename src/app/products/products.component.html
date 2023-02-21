@@ -1,0 +1,14 @@
+<!-- <p>products works!</p> -->
+ <div class="parent">
+    <div class="child1"  *ngFor="let products of products">
+        <p><img src="{{products.image}}" alt="" width="100px" height="100px"></p>
+        <p>{{products.id }} </p>
+        <p>{{products.title}}</p>
+        <p>{{products.price}}</p>
+        <p>{{products.description}}</p>
+        <p>{{products.category}}</p>
+        <p>{{products.rating.rate}}</p>
+        <p>{{products.rating.count}}</p>
+    </div>
+
+ </div>
