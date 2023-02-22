@@ -26,6 +26,11 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { StudentComponent } from './student/student.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
  
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     CreateVehicleComponent,
     StudentComponent,
     CreateUserComponent,
-    VehicleDetailsComponent
+    VehicleDetailsComponent,
+    ParentComponent,
+    ChildComponent,
+    ItemsComponent,
+    NavComponent,
+    CartlistComponent
     
   ],
   imports: [
