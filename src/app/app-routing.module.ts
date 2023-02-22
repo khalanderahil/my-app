@@ -1,6 +1,7 @@
 import { Component, Directive, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { takeLast } from 'rxjs';
+import { AboutCeoComponent } from './aboutus/about-ceo/about-ceo.component';
 import { AttributesbDirectivesComponent } from './attributesb-directives/attributesb-directives.component';
 import { AuthencticationGuard } from './authenctication.guard';
 import { BankComponent } from './bank/bank.component';
@@ -53,6 +54,8 @@ const routes: Routes = [
     {path:"items",component:ItemsComponent},
     {path:"nav",component:NavComponent},
     {path:'cartlist',component:CartlistComponent},
+    {path:"about-ceo",component:AboutCeoComponent},
+    
     
   ]},
   { path:'',component:LoginComponent},

@@ -31,6 +31,7 @@ import { ChildComponent } from './child/child.component';
 import { ItemsComponent } from './items/items.component';
 import { NavComponent } from './nav/nav.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
+import { AboutusModule } from './aboutus/aboutus.module';
  
 @NgModule({
   declarations: [
@@ -68,7 +69,9 @@ import { CartlistComponent } from './cartlist/cartlist.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutusModule
+    
     
     
   ],
