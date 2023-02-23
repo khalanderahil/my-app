@@ -25,6 +25,7 @@ import { PhoneComponent } from './phone/phone.component';
 import { ProductsComponent } from './products/products.component';
 import { RedtangleComponent } from './redtangle/redtangle.component';
 import { StudentComponent } from './student/student.component';
+import { UsersComponent } from './users/users.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { VehilceComponent } from './vehilce/vehilce.component';
 
@@ -55,7 +56,8 @@ const routes: Routes = [
     {path:"nav",component:NavComponent},
     {path:'cartlist',component:CartlistComponent},
     {path:"about-ceo",component:AboutCeoComponent},
-    { path: 'contatus',loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule) }
+    { path: 'contatus',loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule) },
+    {path:"users",component:UsersComponent},
     
     
   ]},

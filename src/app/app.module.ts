@@ -35,6 +35,7 @@ import { AboutusModule } from './aboutus/aboutus.module';
 import { PricePipe } from './price.pipe';
 import { SalaryPipe } from './salary.pipe';
 import { ImgDirective } from './img.directive';
+import { UsersComponent } from './users/users.component';
  
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ImgDirective } from './img.directive';
     CartlistComponent,
     PricePipe,
     SalaryPipe,
-    ImgDirective
+    ImgDirective,
+    UsersComponent
     
   ],
   imports: [
