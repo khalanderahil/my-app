@@ -19,4 +19,4 @@ import { AboutAdressComponent } from './about-adress/about-adress.component';
     AboutCeoComponent
   ]
 })
-export class AboutusModule { }
+export class AboutusModule {}

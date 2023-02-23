@@ -1,5 +1,5 @@
 import { Component, Directive, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { takeLast } from 'rxjs';
 import { AboutCeoComponent } from './aboutus/about-ceo/about-ceo.component';
 import { AttributesbDirectivesComponent } from './attributesb-directives/attributesb-directives.component';
@@ -55,6 +55,7 @@ const routes: Routes = [
     {path:"nav",component:NavComponent},
     {path:'cartlist',component:CartlistComponent},
     {path:"about-ceo",component:AboutCeoComponent},
+    { path: 'contatus',loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule) }
     
     
   ]},
@@ -63,7 +64,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
