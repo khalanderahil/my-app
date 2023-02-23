@@ -43,7 +43,8 @@
             <td>{{student.address}}</td>
             <td><img src="student.image" alt=""></td>
             <td>{{student.placedIn}}</td>
-            <td>{{student.salary}}</td>
+            <!-- pipes -->
+            <td>{{student.salary | salary}}</td>
             <td><button class="btn btn-danger">delete</button></td>
         </tr>
     </tbody>

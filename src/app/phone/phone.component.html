@@ -11,7 +11,7 @@
         <tr *ngFor="let phone of phones;let i=index">
             <td>{{i+1}}</td>
             <td>{{phone.company}}</td>
-            <td>{{phone.price}}</td>
+            <td>{{phone.price | price}}</td>
         </tr>
 
     </tbody>
